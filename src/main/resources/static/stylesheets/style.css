@@ -53,4 +53,30 @@ input[type="text"], input[type="date"]{
     box-shadow: 1em 1em var(--border-radius) var(--shadow-color);
     border-radius: var(--border-radius);
     margin: calc(2*var(--grid-gap)) 0 calc(2*var(--grid-gap)) 0;
+    
+}
+
+.entry > h3{
+    display: inline;
+}
+
+.imagelist{
+    overflow:auto;
+    width: 97%;
+    margin: 0 auto ;
+}
+.imagelist > ul{
+    display:block;
+    
+    float:left;
+}
+
+.imagelist > img{
+    float:right;
+    width:16em;
+    height:9em;
+    background-color: var(--accent-pale); /*for debug purposes only*/
+    border-radius: var(--border-radius);
+    clip-path: border-box;
+    object-fit:cover;
 }

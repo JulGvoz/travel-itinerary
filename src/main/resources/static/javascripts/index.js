@@ -16,12 +16,14 @@ function getDemoEntry(){
     <span class="date_start">21 May</span>
     <span class="date_end">4 June</span>
     <span class="number_of_days">14 days</span>
-    <ul>
-        <li>sight 1</li>
-        <li>sight 2</li>
-        <li>...and more</li>
-    </ul>
-    <img style="background-color: blue; width:2em; height:2em;">
+    <div class="imagelist">
+        <ul>
+            <li>sight 1</li>
+            <li>sight 2</li>
+            <li>...and more</li>
+        </ul>
+        <img>
+    </div>
     <button>More info</button>
     <span class="price">1473.00</span>`;
     return entry;
