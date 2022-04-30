@@ -28,15 +28,17 @@ public class TravelItineraryApplication {
 	@Bean
 	CommandLineRunner loadCountries(CountryService countryService) {
 		return args -> {
+			if (countryService.count() > 10) {
+				return;
+			}
 			ObjectMapper mapper = new ObjectMapper();
 			mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 			TypeReference<List<Country>> typeReference = new TypeReference<>() {};
-			// 			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/users.json");
 			try (InputStream inputStream =
 						 TypeReference.class.getResourceAsStream("/data/countries_cities.json")) {
 				List<Country> countries = mapper.readValue(inputStream, typeReference);
 				countryService.clear();
-				var saved = countryService.save(countries);
+				countryService.save(countries);
 				System.out.println("Saved " + countries.size() + " countries!");
 			} catch (IOException e) {
 				System.err.println("Unable to save countries: " + e.getMessage());

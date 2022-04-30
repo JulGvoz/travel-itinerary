@@ -25,4 +25,8 @@ public class CountryService {
     public void clear() {
         countryRepository.deleteAll();
     }
+
+    public int count() {
+        return (int) countryRepository.count();
+    }
 }
