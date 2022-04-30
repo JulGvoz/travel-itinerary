@@ -1,6 +1,6 @@
 package travelitinerary.services;
 
-import entities.Country;
+import entities.countries.Country;
 import org.springframework.stereotype.Service;
 import travelitinerary.repositories.CountryRepository;
 

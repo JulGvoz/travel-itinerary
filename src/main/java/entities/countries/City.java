@@ -1,4 +1,4 @@
-package entities;
+package entities.countries;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
