@@ -4,23 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Travel Itinerary</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
     <h1>Travel Itinerary</h1>
-    <form>
+    <form id="query_parameters">
         <label for="starting_place">From where?</label>
         <input type="text" id="starting_place" name="starting_place">
-        <label for="destination">Where?</label>
+        <label for="destination">To where?</label>
         <input type="text" id="destination" name="destination">
         <label for="number_of_people">For how many people?</label>
-        <input type="range" min="1" max="60" value="30" id="number_of_people">
+        <div>
+            <input type="range" min="1" max="60" value="30" id="number_of_people" class="slider">
+            
+        </div>
         <!-- <label for=""></label>
         <input type="range" min="1" max="100" value="50" id="number_of_people"> -->
-        <label for="start_date">Start?</label>
-        <input type="date" id="start_date" name="start_date">
-        <label for="end_date">End?</label>
-        <input type="date" id="end_date" name="end_date">
+        <div id="two_dates_picker">
+            <label for="start_date">Start?</label>
+            <input type="date" id="start_date" name="start_date">
+            <label for="end_date">End?</label>
+            <input type="date" id="end_date" name="end_date">
+        </div>
+        
     </form>
     <button onclick="requestChange()">Refresh(debug only)</button>
     <section id="results">
@@ -28,7 +35,7 @@
             Here div's with content will be inserted
         -->
         <div class="entry">
-            <h6>Barcelona, Spain</h6>
+            <h3>Barcelona, Spain</h3>
             <span class="date_start">21 May</span>
             <span class="date_end">4 June</span>
             <span class="number_of_days">14 days</span>
