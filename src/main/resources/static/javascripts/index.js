@@ -12,10 +12,12 @@ function requestChange(){
 function getDemoEntry(){
     let entry = document.createElement("div");
     entry.classList.add("entry")
-    entry.innerHTML = `<h3>Barcelona, Spain</h3>
-    <span class="date_start">21 May</span>
-    <span class="date_end">4 June</span>
-    <span class="number_of_days">14 days</span>
+    entry.innerHTML = `<div class="entry_heading">
+        <h3>Barcelona, Spain</h3>
+        <span class="date_start">21 May</span>
+        <span class="date_end">4 June</span>
+        <span class="number_of_days">14 days</span>
+    </div>
     <div class="imagelist">
         <ul>
             <li>sight 1</li>

@@ -34,7 +34,7 @@ form{
     justify-content: space-between;
 }
 
-input[type="text"], input[type="date"]{
+input[type="text"], input[type="date"], button{
     background-color: var(--accent-pale);
     border-radius: var(--border-radius);
     border: 0.3em solid var(--accent-strong);
@@ -53,12 +53,8 @@ input[type="text"], input[type="date"]{
     box-shadow: 1em 1em var(--border-radius) var(--shadow-color);
     border-radius: var(--border-radius);
     margin: calc(2*var(--grid-gap)) 0 calc(2*var(--grid-gap)) 0;
-    
 }
 
-.entry > h3{
-    display: inline;
-}
 
 .imagelist{
     overflow:auto;
@@ -67,7 +63,6 @@ input[type="text"], input[type="date"]{
 }
 .imagelist > ul{
     display:block;
-    
     float:left;
 }
 
@@ -79,4 +74,23 @@ input[type="text"], input[type="date"]{
     border-radius: var(--border-radius);
     clip-path: border-box;
     object-fit:cover;
+    content: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d5aabe64-92fe-4491-831f-e2d4453adcd2/d60ferc-82784920-3305-4c4e-b1ee-b52d736a6de4.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q1YWFiZTY0LTkyZmUtNDQ5MS04MzFmLWUyZDQ0NTNhZGNkMlwvZDYwZmVyYy04Mjc4NDkyMC0zMzA1LTRjNGUtYjFlZS1iNTJkNzM2YTZkZTQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FTGYlVrHV58Wr6m7ixtff5bwhwcLuGZeWoBoMg8ST4M");
+}
+
+.entry > .price {
+    font-weight: 600;
+}
+
+.entry_heading > h3{
+    display: inline-block;
+}
+
+.entry_heading {
+    display: grid;
+    grid-template-columns: 0.4fr 0.2fr 0.2fr 0.2fr;
+    grid-template-rows: 1fr;
+}
+
+.entry_heading > * {
+    margin: 0;
 }
