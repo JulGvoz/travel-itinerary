@@ -50,16 +50,16 @@ input[type="text"], input[type="date"], button{
 }
 
 .entry{
-    box-shadow: 1em 1em var(--border-radius) var(--shadow-color);
+    box-shadow: 0 0 var(--border-radius) var(--shadow-color);
     border-radius: var(--border-radius);
     margin: calc(2*var(--grid-gap)) 0 calc(2*var(--grid-gap)) 0;
+    padding: var(--border-radius);
 }
 
 
 .imagelist{
     overflow:auto;
-    width: 97%;
-    margin: 0 auto ;
+
 }
 .imagelist > ul{
     display:block;
