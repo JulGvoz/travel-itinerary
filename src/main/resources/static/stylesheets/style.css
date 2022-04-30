@@ -3,10 +3,12 @@
 :root {
     --main-color: white;
     --text-color: #343434;
+    --shadow-color: lightgray;
     --accent-pale: #edbde4;
     --accent-strong: #d467bf;
     --grid-gap: 1em;
     --border-radius: 1em;
+    --page-width: 70%
 }
 
 body{
@@ -20,7 +22,7 @@ form{
     grid-template-rows: repeat(3, 0.33fr);
     grid-row-gap: var(--grid-gap);
     grid-column-gap: var(--grid-gap);
-    width: 70%;
+    width: var(--page-width);
     margin: 0 auto;
 
 }
@@ -37,4 +39,18 @@ input[type="text"], input[type="date"]{
     border-radius: var(--border-radius);
     border: 0.3em solid var(--accent-strong);
     padding: 0 0.5em 0 0.5em;
+}
+
+#results {
+    width: var(--page-width);
+    margin: 0 auto;
+    overflow-y: auto;
+    height: 60vh;
+    padding: 3%;
+}
+
+.entry{
+    box-shadow: 1em 1em var(--border-radius) var(--shadow-color);
+    border-radius: var(--border-radius);
+    margin: calc(2*var(--grid-gap)) 0 calc(2*var(--grid-gap)) 0;
 }
