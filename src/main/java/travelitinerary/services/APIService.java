@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 public class APIService {
 
     private String carbonEstimate = "";
+    private String travelPayouts = "";
 
     public String getCarbonEstimate() {
         return carbonEstimate;
@@ -13,5 +14,13 @@ public class APIService {
 
     public void setCarbonEstimate(String carbonEstimate) {
         this.carbonEstimate = carbonEstimate;
+    }
+
+    public void setTravelPayouts(String travelPayouts) {
+        this.travelPayouts = travelPayouts;
+    }
+
+    public String getTravelPayouts() {
+        return travelPayouts;
     }
 }
