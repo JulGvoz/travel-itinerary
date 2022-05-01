@@ -53,7 +53,7 @@ function getEntry(city, country, startDate, endDate, price){
 }
 
 function openElaborateView(elem){
-    let parent = elem.parentNode;
+    let parent = elem.parentNode.parentNode;
     let url = new URL(window.location.href.replace("index.html", "elaborate_view.html"));
     url.searchParams.append("city", parent.dataset.city);
     url.searchParams.append("country", parent.dataset.country);
