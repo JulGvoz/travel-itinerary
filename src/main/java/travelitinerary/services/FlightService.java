@@ -1,5 +1,5 @@
 package travelitinerary.services;
 
-public class FlightsService {
+public class FlightService {
 
 }

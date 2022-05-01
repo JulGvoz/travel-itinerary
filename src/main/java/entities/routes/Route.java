@@ -13,8 +13,9 @@ import javax.persistence.*;
 public class Route {
     @Id
     @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     @JsonProperty("source_airport")
     private String departureAirport;
     @JsonProperty("destination_airport")

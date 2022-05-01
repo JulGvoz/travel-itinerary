@@ -7,7 +7,7 @@ import travelitinerary.repositories.AirportRepository;
 import java.util.List;
 
 @Service
-public class AirportService {
+public class AirportService implements LoadableService<Airport> {
     private final AirportRepository airportRepository;
 
     public AirportService(AirportRepository airportRepository) {

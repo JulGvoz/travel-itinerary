@@ -7,7 +7,7 @@ import travelitinerary.repositories.CountryRepository;
 import java.util.List;
 
 @Service
-public class CountryService {
+public class CountryService implements LoadableService<Country> {
     private final CountryRepository countryRepository;
 
     public CountryService(CountryRepository countryRepository) {
@@ -18,7 +18,7 @@ public class CountryService {
         return countryRepository.findAll();
     }
 
-    public Iterable<Country> save(List<Country> countries) {
+    public List<Country> save(List<Country> countries) {
         return countryRepository.saveAll(countries);
     }
 
