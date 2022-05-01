@@ -1,4 +1,8 @@
 package entities.carbon;
 
-record CarbonEstimateLeg(String departure_airport, String destination_airport) {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+record CarbonEstimateLeg(
+        @JsonProperty("departure_airport") String departureAirport,
+        @JsonProperty("destinationAirport") String destinationAirport) {
 }
