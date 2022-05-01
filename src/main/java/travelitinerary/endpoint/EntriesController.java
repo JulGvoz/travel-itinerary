@@ -31,7 +31,7 @@ public class EntriesController {
             @RequestParam(value = "end_date", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate
     ) {
         var rng = new Random();
-        var price = rng.nextInt(600) + 600;
+        var price = rng.nextInt(1600) + 200;
         var country = new Country();
         while (from == null) {
             var countries = countryRepository.findAll();
@@ -78,12 +78,14 @@ public class EntriesController {
         while (peopleCount == null || peopleCount < 1) {
             peopleCount = 1;
         }
+        var sights = new ArrayList<>(List.of("Museums", "Water parks", "Beach", "Sea", "Ocean", "Nightlife", "Spa", "Natural wonders"));
+        Collections.shuffle(sights);
         return new EntryResponse(
                 to, country.getName(),
                 startDate, endDate,
                 price,
                 "https://random.imagecdn.app/500/150",
-                List.of("sight1", "sight2", "sight3")
+                sights.subList(0, rng.nextInt(3) + 1)
         );
     }
 
