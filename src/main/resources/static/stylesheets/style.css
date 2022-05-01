@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 
 :root {
-    --main-color: white;
+    --main-color: #f2f4f4;
+    --entry-color: white;
     --text-color: #343434;
     --shadow-color: lightgray;
     --accent-pale: #edbde4;
@@ -14,6 +15,7 @@
 body{
     color: var(--text-color);
     font-family: 'Montserrat', sans-serif;
+    background-color: var(--main-color);
 }
 
 form{
@@ -54,6 +56,7 @@ input[type="text"], input[type="date"], button{
     border-radius: var(--border-radius);
     margin: calc(2*var(--grid-gap)) 0 calc(2*var(--grid-gap)) 0;
     padding: var(--border-radius);
+    background-color: var(--entry-color);
 }
 
 .imagelist{
