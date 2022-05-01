@@ -96,7 +96,7 @@ Source 	Source of this data. "OurAirports", "Legacy" , "User"
 	@Bean
 	CommandLineRunner loadAirports(AirportService airportService) {
 		return args -> {
-			if (airportService.count() < 10) {
+			if (airportService.count() > 10) {
 				return;
 			}
 			ObjectMapper mapper = new ObjectMapper();
