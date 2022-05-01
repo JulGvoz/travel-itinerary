@@ -68,6 +68,7 @@ input[type="text"], input[type="date"], button{
     float:left;
 }
 
+.flights > img,
 .imagelist > img{
     float:right;
     width:16em;
@@ -89,10 +90,12 @@ input[type="text"], input[type="date"], button{
     display: grid;
     grid-template-columns: 0.4fr 0.2fr 0.2fr 0.2fr;
     grid-template-rows: 1fr;
+    align-items: center;
 }
 
 .entry_heading > * {
     margin: 0;
+    display: inline-block;
 }
 
 #elaborate_view{
@@ -124,4 +127,49 @@ input[type="text"], input[type="date"], button{
 
 .price::before{
     content: "\20ac"
+}
+
+.date_start::before{
+    background-image: url("../resources/takeoff-the-plane.png");
+    display:inline-block;
+    width: 2em;
+    height: 2em;
+    background-size: 2em 2em;
+    content: "";
+}
+
+.date_end::before{
+    background-image: url("../resources/plane-landing.png");
+    display:inline-block;
+    width: 2em;
+    height: 2em;
+    background-size: 2em 2em;
+    content: "";
+}
+
+.number_of_days::before{
+    background-image: url("../resources/wall-clock.png");
+    display:inline-block;
+    width: 2em;
+    height: 2em;
+    background-size: 2em 2em;
+    content: "";
+}
+
+.flights > ul{
+    width: 60%;
+    display: block;
+}
+
+.flights{
+    overflow:auto;
+}
+
+.connecting {
+    background-image: url("../resources/planes-circling.png");
+    display:inline-block;
+    width: 2em;
+    height: 2em;
+    background-size: 2em 2em;
+    content: "";
 }

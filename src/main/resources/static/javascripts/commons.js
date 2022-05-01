@@ -26,3 +26,5 @@ export function dateCustomToString(date){
       ];
     return `${day} ${months[monthInt]}`;
 }
+
+export var xhttp = new XMLHttpRequest();
