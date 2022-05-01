@@ -1,7 +1,5 @@
 import * as commons from "./commons.js";
 
-var xhttp = new XMLHttpRequest();
-
 /**
  * Creates a request to the server for populating the section with content
  */
@@ -11,6 +9,8 @@ function requestChange(){
     let endDate = new Date("2022-06-04");
     section.appendChild(getEntry("Barcelona", "Spain", startDate, endDate, 1473))
 }
+window.openElaborateView = openElaborateView;
+window.requestChange = requestChange;
 
 /**
  * Returns a DOM element that contains demo info from an entry
