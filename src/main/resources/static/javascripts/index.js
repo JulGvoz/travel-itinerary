@@ -45,8 +45,10 @@ function getEntry(city, country, startDate, endDate, price){
         </ul>
         <img>
     </div>
-    <button onclick="openElaborateView(this)">More info</button>
-    <span class="price">${price.toFixed(2)}</span>`;
+    <div class="last_row_entry">
+        <button onclick="openElaborateView(this)">More info</button>
+        <span class="price">${price.toFixed(2)}</span>
+    </div>`;
     return entry;
 }
 
