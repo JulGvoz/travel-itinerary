@@ -1,5 +1,6 @@
 ## Search
-### Request
+### Request 
+`/api/entries`
  - Departure location `starting_place`
  - Destination location `destination`
  - How many people `number_of_people`
