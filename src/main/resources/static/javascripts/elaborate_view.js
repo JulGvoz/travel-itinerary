@@ -14,7 +14,7 @@ function populateInformation(){
     content.getElementsByClassName("date_start")[0].innerHTML = `${commons.dateCustomToString(startDate)}`;
     content.getElementsByClassName("date_end")[0].innerHTML = `${commons.dateCustomToString(endDate)}`;
     content.getElementsByClassName("number_of_days")[0].innerHTML = `${diff} days`;
-    content.getElementsByClassName("price")[0].innerHTML = `${urlParams.get("price")}`;
+    content.getElementsByClassName("price")[0].innerHTML = `${Number(urlParams.get("price")).toFixed(2)}`;
 }
 
 window.onload = populateInformation();
