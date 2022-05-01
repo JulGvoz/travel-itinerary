@@ -28,3 +28,10 @@ export function dateCustomToString(date){
 }
 
 export var xhttp = new XMLHttpRequest();
+
+export function refreshEntries(){
+    xhttp.open("GET", "/api/entities");
+    xhttp.send();
+    console.log(xhttp.responseXML);
+}
+

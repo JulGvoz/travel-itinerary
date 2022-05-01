@@ -17,4 +17,5 @@ function populateInformation(){
     content.getElementsByClassName("price")[0].innerHTML = `${Number(urlParams.get("price")).toFixed(2)}`;
 }
 
-window.onload = populateInformation();
+window.onload = populateInformation;
+window.refreshEntries = commons.refreshEntries;
