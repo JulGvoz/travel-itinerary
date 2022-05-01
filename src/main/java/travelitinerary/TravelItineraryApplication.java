@@ -10,6 +10,7 @@ import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import entities.airports.Airport;
 import entities.countries.Country;
+import entities.routes.Route;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,9 +19,11 @@ import org.springframework.context.annotation.Bean;
 import travelitinerary.services.APIService;
 import travelitinerary.services.AirportService;
 import travelitinerary.services.CountryService;
+import travelitinerary.services.RouteService;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
@@ -29,27 +32,6 @@ public class TravelItineraryApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TravelItineraryApplication.class, args);
-	}
-
-	@Bean
-	CommandLineRunner loadCountries(CountryService countryService) {
-		return args -> {
-			if (countryService.count() > 10) {
-				return;
-			}
-			ObjectMapper mapper = new ObjectMapper();
-			mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
-			TypeReference<List<Country>> typeReference = new TypeReference<>() {};
-			try (InputStream inputStream =
-						 TypeReference.class.getResourceAsStream("/data/countries_cities.json")) {
-				List<Country> countries = mapper.readValue(inputStream, typeReference);
-				countryService.clear();
-				countryService.save(countries);
-				System.out.println("Saved " + countries.size() + " countries!");
-			} catch (IOException e) {
-				System.err.println("Unable to save countries: " + e.getMessage());
-			}
-		};
 	}
 
 	@Bean
@@ -72,6 +54,27 @@ public class TravelItineraryApplication {
 			} else {
 				apiService.setTravelPayouts(args[1]);
 				System.out.println("Set API key of Travel Payouts to " + args[1]);
+			}
+		};
+	}
+
+	@Bean
+	CommandLineRunner loadCountries(CountryService countryService) {
+		return args -> {
+			if (countryService.count() > 10) {
+				return;
+			}
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+			TypeReference<List<Country>> typeReference = new TypeReference<>() {};
+			try (InputStream inputStream =
+						 TypeReference.class.getResourceAsStream("/data/countries_cities.json")) {
+				List<Country> countries = mapper.readValue(inputStream, typeReference);
+				countryService.clear();
+				countryService.save(countries);
+				System.out.println("Saved " + countries.size() + " countries!");
+			} catch (IOException e) {
+				System.err.println("Unable to save countries: " + e.getMessage());
 			}
 		};
 	}
@@ -112,6 +115,29 @@ Source 	Source of this data. "OurAirports", "Legacy" , "User"
 				System.out.println("Saved " + airports.size() + " airports!");
 			} catch (IOException e) {
 				System.err.println("Unable to save airports: " + e.getMessage());
+			}
+		};
+	}
+
+	@Bean
+	CommandLineRunner loadRoutes(RouteService routeService) {
+		return args -> {
+			if (routeService.count() > 10) {
+				return;
+			}
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+			mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+
+			TypeReference<List<Route>> typeReference = new TypeReference<>() {};
+			try (InputStream inputStream =
+						 TypeReference.class.getResourceAsStream("/data/routes.json")) {
+				List<Route> routes = mapper.readValue(inputStream, typeReference);
+				routeService.clear();
+				routeService.save(routes);
+				System.out.println("Saved " + routes.size() + " routes!");
+			} catch (IOException e) {
+				System.err.println("Unable to save routes: " + e.getMessage());
 			}
 		};
 	}
