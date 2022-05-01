@@ -45,6 +45,10 @@
 			<artifactId>travel-itinerary</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-csv</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
