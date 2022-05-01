@@ -7,7 +7,15 @@ function requestChange(){
     let section = document.getElementById("results");
     let startDate = new Date("2022-05-24");
     let endDate = new Date("2022-06-04");
-    section.appendChild(getEntry("Barcelona", "Spain", startDate, endDate, 1473))
+    let entries = [getEntry("Barcelona", "Spain", startDate, endDate, 1473)];
+    
+    while (section.firstChild) {
+        section.removeChild(section.firstChild);
+    }
+    
+    for(const entry of entries){
+        section.appendChild(entry);
+    }
 }
 window.openElaborateView = openElaborateView;
 window.requestChange = requestChange;
