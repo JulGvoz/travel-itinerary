@@ -20,6 +20,25 @@ public class Country {
     private Double latitude;
     private Double longitude;
 
-    private Country() {}
+    public Country() {}
 
+    public String getName() {
+        return name;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public List<City> getCities() {
+        return cities;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
 }
